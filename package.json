@@ -1,0 +1,29 @@
+{
+  "name": "restaurantpage",
+  "version": "1.0.0",
+  "description": "Mock Restaurant page dynamically rendered with Javascript",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/amarkos27/restaurantPage.git"
+  },
+  "author": "Ari Markos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amarkos27/restaurantPage/issues"
+  },
+  "homepage": "https://github.com/amarkos27/restaurantPage#readme",
+  "devDependencies": {
+    "css-loader": "^7.1.1",
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.9.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  }
+}
