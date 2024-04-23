@@ -2,13 +2,20 @@ body {
     display: grid;
     grid: 1fr 5fr / 1fr;
     height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
 }
 
 header {
     align-self: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 30px;
+}
+
+header img {
+    width: 200px;
 }
 
 header nav {
