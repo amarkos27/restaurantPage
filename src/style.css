@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Pollos';
-    src: url('./JIBurrito.woff') format('woff'), url('./JIBurrito.woff2') format('woff2');
+    src: url('./fonts/JIBurrito.woff') format('woff'), url('./fonts/JIBurrito.woff2') format('woff2');
     font-style: normal;
     font-weight: normal;
 }
