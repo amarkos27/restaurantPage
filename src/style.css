@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Pollos';
+    src: url('./JIBurrito.woff') format('woff'), url('./JIBurrito.woff2') format('woff2');
+    font-style: normal;
+    font-weight: normal;
+}
+
 body {
     display: grid;
     grid: 1fr 5fr / 1fr;
@@ -21,4 +28,8 @@ header img {
 header nav {
     display: flex;
     gap: 5vw;
+}
+
+#content {
+    font-family: 'Pollos';
 }
