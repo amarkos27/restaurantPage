@@ -10,5 +10,24 @@ function renderLogo() {
   return pollos;
 }
 
-const header = document.querySelector('header');
-header.insertBefore(renderLogo(), header.firstChild);
+function render(initialRender = true) {
+  if (initialRender) {
+    const header = document.querySelector('header');
+    header.insertBefore(renderLogo(), header.firstChild);
+
+    const buttons = document.querySelectorAll('button');
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const alreadyClicked = [...buttons].filter((otherButton) =>
+          otherButton.classList.contains('clicked')
+        );
+
+        unClick(alreadyClicked[0]);
+        click(button);
+      });
+    });
+  }
+}
+
+render();
