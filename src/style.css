@@ -29,7 +29,3 @@ header nav {
     display: flex;
     gap: 5vw;
 }
-
-#content {
-    font-family: 'Pollos';
-}
