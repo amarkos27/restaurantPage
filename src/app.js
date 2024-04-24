@@ -1,6 +1,7 @@
 import 'normalize.css';
 import './style.css';
-import Logo from './Los_Pollos_Hermanos_logo.png';
+import Logo from './images/Los_Pollos_Hermanos_logo.png';
+import Store from './images/storefront.jpeg';
 import { click, unClick } from './buttonAnimation.js';
 
 function renderLogo() {

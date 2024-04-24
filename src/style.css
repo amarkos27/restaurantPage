@@ -10,10 +10,11 @@ body {
     grid: 1fr 5fr / 1fr;
     height: 100vh;
     background: rgba(0, 0, 0, 0.6);
+    justify-items: center;
+    gap: 15px;
 }
 
 header {
-    align-self: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,6 +25,8 @@ header {
 
 header img {
     width: 200px;
+    /* Use margin to fix image being slightly off center due to intrinsic dimensions */
+    margin-right: 11.25px;
 }
 
 header nav {
@@ -55,4 +58,23 @@ button.clicked {
     background: rgba(190,34,39,255);
     color: white;
     box-shadow: inset 0px 0px 5px rgba(255, 255, 255, 0.8); 
+}
+
+#content {
+    width: 50vw;
+    height: 55vh;
+    border-radius: 30px;
+    padding: 15px;
+    box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.6);
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+#content h1 {
+    padding: 0;
+    width: fit-content;
+    font-weight: normal;
+    font-family: 'Pollos';
+    color: rgba(190,34,39,255);
 }
