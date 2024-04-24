@@ -1,8 +1,9 @@
 import 'normalize.css';
 import './style.css';
 import Logo from './Los_Pollos_Hermanos_logo.png';
+import { click, unClick } from './buttonAnimation.js';
 
-function component() {
+function renderLogo() {
   const pollos = new Image();
   pollos.src = Logo;
 
@@ -10,5 +11,4 @@ function component() {
 }
 
 const header = document.querySelector('header');
-
-header.insertBefore(component(), header.firstChild);
+header.insertBefore(renderLogo(), header.firstChild);
