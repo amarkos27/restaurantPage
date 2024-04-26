@@ -14,6 +14,8 @@ body {
     gap: 15px;
 }
 
+/* HEADER */
+
 header {
     display: flex;
     flex-direction: column;
@@ -61,23 +63,29 @@ button.clicked {
     box-shadow: inset 0px 0px 5px rgba(255, 255, 255, 0.8); 
 }
 
+/* CONTENT BOX */
+
 #content {
     width: fit-content;
-    height: 520px;
+    height: fit-content;
     border-radius: 30px;
     box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.6);
     background-color: white;
     transition: 1s;
 }
 
+/* HOME PAGE */
+
 .homeContainer {
-    height: inherit;
+    width: 800px;
+    height: 520px;
     display: grid;
     justify-items: center;
     grid: 1fr 4fr / 1fr 1fr;
     grid-template-areas: 
     "header header"
     "welcome store-front";
+    transition: 1s;
 }
 
 .welcome {
@@ -94,7 +102,6 @@ button.clicked {
 }
 
 .homePageQuote {
-    width: 400px;
     max-height: 100%;
     display: flex;
     justify-content: start;
@@ -106,6 +113,7 @@ button.clicked {
 
 .quoteHeader {
     font-family: 'Pollos';
+    font-weight: normal;
     text-align: center;
     color: rgba(190,34,39,255);
 }
@@ -124,6 +132,17 @@ button.clicked {
     border-radius: 0 0 29px 0;
 }
 
+/* MENU PAGE */
+.menuContainer {
+    width: 80vw;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.menuItem {
+}
+
 @media screen and (max-width: 815px) {
     header img {
         width: 140px;
@@ -135,12 +154,11 @@ button.clicked {
         font-size: 20px;
     }
 
-    #content {
-        width: 500px;
-        height: 800px;
-    }
 
     .homeContainer {
+        width: 490px;
+        height: 800px;
+        max-height: fit-content;
         grid: 1fr 4fr 4fr / 1fr;
         grid-template-areas: 
         "header"
