@@ -11,7 +11,7 @@ function render() {
   const header = document.querySelector('header');
   header.insertBefore(renderImage(Logo), header.firstChild);
 
-  content.appendChild(renderMenu());
+  content.appendChild(renderHome());
 
   const buttons = document.querySelectorAll('button');
   buttons.forEach((button) => {
@@ -20,8 +20,20 @@ function render() {
         otherButton.classList.contains('clicked')
       );
 
-      unClick(alreadyClicked[0]);
-      click(button);
+      if (!button.classList.contains('clicked')) {
+        unClick(alreadyClicked[0]);
+        click(button);
+
+        content.removeChild(content.children[0]);
+
+        if (button.classList.contains('home')) {
+          content.appendChild(renderHome());
+        } else if (button.classList.contains('menu')) {
+          content.appendChild(renderMenu());
+        } else {
+          content.appendChild(renderAbout());
+        }
+      }
     });
   });
 }
