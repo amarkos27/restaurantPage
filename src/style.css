@@ -142,16 +142,16 @@ button.clicked {
 /* MENU PAGE */
 .menuContainer {
     min-width: fit-content;
-    width: 80vw;
+    width: 70vw;
     padding: 10px;
     gap: 5px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     justify-items: center;
 }
 
 .menuItem {
-    width: 260px;
+    width: 280px;
     height: 260px;
     padding: 10px;
     display: grid;
