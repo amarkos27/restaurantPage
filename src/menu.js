@@ -72,24 +72,24 @@ export default function renderMenu() {
   );
 
   const item6 = createMenuItem(
+    bonelessWings,
+    'BONELESS WINGS',
+    '12pc boneless wings. Available in classic, zinger, or BBQ.',
+    '$7.99'
+  );
+
+  const item7 = createMenuItem(
     loadedBox,
     'LOADED BOX MEAL',
     'Fillet burger in classic or zinger, chicken strips, fries & drink.',
     '$6.49'
   );
 
-  const item7 = createMenuItem(
+  const item8 = createMenuItem(
     miniBucket,
     'MINI BUCKET',
     '6pc regular, 6pc spicy wings, fries.',
     '$9.99'
-  );
-
-  const item8 = createMenuItem(
-    bonelessWings,
-    'BONELESS WINGS',
-    '12pc boneless wings. Available in classic, zinger, or BBQ.',
-    '$7.99'
   );
 
   container.appendChild(item1);
