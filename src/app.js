@@ -11,7 +11,10 @@ function render() {
   const header = document.querySelector('header');
   header.insertBefore(renderImage(Logo), header.firstChild);
 
-  content.appendChild(renderHome());
+  const home = renderHome();
+  const menu = renderMenu();
+
+  content.appendChild(home);
 
   const buttons = document.querySelectorAll('button');
   buttons.forEach((button) => {
@@ -27,9 +30,9 @@ function render() {
         content.removeChild(content.children[0]);
 
         if (button.classList.contains('home')) {
-          content.appendChild(renderHome());
+          content.appendChild(home);
         } else if (button.classList.contains('menu')) {
-          content.appendChild(renderMenu());
+          content.appendChild(menu);
         } else {
           content.appendChild(renderAbout());
         }
