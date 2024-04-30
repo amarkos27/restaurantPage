@@ -5,6 +5,7 @@ import renderImage from './renderImage.js';
 import { click, unClick } from './buttonAnimation.js';
 import renderHome from './home.js';
 import renderMenu from './menu.js';
+import renderAbout from './about.js';
 
 function render() {
   const content = document.querySelector('#content');
@@ -13,8 +14,9 @@ function render() {
 
   const home = renderHome();
   const menu = renderMenu();
+  const about = renderAbout();
 
-  content.appendChild(home);
+  content.appendChild(about);
 
   const buttons = document.querySelectorAll('button');
   buttons.forEach((button) => {
@@ -34,7 +36,7 @@ function render() {
         } else if (button.classList.contains('menu')) {
           content.appendChild(menu);
         } else {
-          content.appendChild(renderAbout());
+          content.appendChild(about);
         }
       }
     });
