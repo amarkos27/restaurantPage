@@ -204,8 +204,7 @@ button.clicked {
 /* ABOUT PAGE */
 
 .aboutContainer {
-    min-width: fit-content;
-    width: 70vw;
+    width: max(55vw, 350px);
     min-height: 545px;
     max-height: fit-content;
     padding: 20px;
@@ -242,10 +241,15 @@ button.clicked {
 .fringDiv {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
     flex: 1;
     min-width: 301px;
+}
+
+.fringDiv p {
+    max-width: 350px;
 }
 
 .fring {
@@ -265,6 +269,26 @@ button.clicked {
 .contact li {
     line-height: 75px;
     white-space: nowrap;
+}
+
+.row2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.locationsDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.map {
+    width: 350px;
+    height: 225px;
 }
 
 @media screen and (max-width: 815px) {

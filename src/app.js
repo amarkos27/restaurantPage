@@ -16,7 +16,7 @@ function render() {
   const menu = renderMenu();
   const about = renderAbout();
 
-  content.appendChild(about);
+  content.appendChild(home);
 
   const buttons = document.querySelectorAll('button');
   buttons.forEach((button) => {
