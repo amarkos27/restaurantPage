@@ -29,15 +29,29 @@ function render() {
         unClick(alreadyClicked[0]);
         click(button);
 
-        content.removeChild(content.children[0]);
+        const newContent = button.classList.contains('home')
+          ? home
+          : button.classList.contains('menu')
+          ? menu
+          : about;
 
-        if (button.classList.contains('home')) {
-          content.appendChild(home);
-        } else if (button.classList.contains('menu')) {
-          content.appendChild(menu);
-        } else {
-          content.appendChild(about);
-        }
+        content.classList.add('fadeOut');
+
+        content.addEventListener(
+          'animationend',
+          () => {
+            content.removeChild(content.children[0]);
+            content.classList.remove('fadeOut');
+
+            content.classList.add('fadeIn');
+            content.appendChild(newContent);
+
+            setTimeout(() => {
+              content.classList.remove('fadeIn');
+            }, 1000);
+          },
+          { once: true }
+        );
       }
     });
   });
