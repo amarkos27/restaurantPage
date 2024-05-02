@@ -374,9 +374,9 @@ button.clicked {
 }
 
 .fadeIn {
-    animation: fadeIn .75s;
+    animation: fadeIn .5s;
 }
 
 .fadeOut {
-    animation: fadeOut .75s;
+    animation: fadeOut .5s;
 }
