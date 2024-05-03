@@ -292,6 +292,10 @@ button.clicked {
     border-radius: 10px;
 }
 
+.map * {
+    animation: none;
+}
+
 @media screen and (max-width: 1025px) {
     .map {
         width: 300px;

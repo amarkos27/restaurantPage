@@ -1,3 +1,5 @@
+import createMap from './map.js';
+
 function aboutFring() {
   const fringDiv = document.createElement('div');
   fringDiv.classList.add('fringDiv');
@@ -41,18 +43,6 @@ function contactInfo() {
   contact.appendChild(info);
 
   return contact;
-}
-
-function createMap() {
-  const iframe = document.createElement('iframe'); // Create an iframe element
-  iframe.classList.add('map');
-  iframe.style.border = '0';
-  iframe.loading = 'lazy';
-  iframe.allowFullscreen = true;
-  iframe.src =
-    'https://www.google.com/maps/embed/v1/search?q=KFC&key=AIzaSyAoT-2jehAdGYCLVFbaxf3L8zhlDFOOp_k';
-
-  return iframe;
 }
 
 function locations() {
