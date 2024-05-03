@@ -5,9 +5,13 @@ async function findPlaces(map, center, existingMarkers = null) {
   const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
   const markerArray = [];
 
+  const infoWindow = new google.maps.InfoWindow({
+    ariaLabel: 'KFC',
+  });
+
   const request = {
     textQuery: 'KFC',
-    fields: ['location'],
+    fields: ['displayName', 'location', 'formattedAddress', 'websiteURI'],
     includedType: 'restaurant',
     locationBias: center,
     isOpenNow: true,
@@ -33,7 +37,19 @@ async function findPlaces(map, center, existingMarkers = null) {
       const markerView = new AdvancedMarkerElement({
         map,
         position: place.location,
-        title: 'Los Pollos Hermanos',
+        title: place.displayName,
+      });
+
+      markerView.addListener('click', () => {
+        infoWindow.setContent(infoWindowContent(place));
+        infoWindow.open({
+          anchor: markerView,
+          map,
+        });
+
+        map.addListener('click', () => {
+          infoWindow.close();
+        });
       });
 
       markerArray.push(markerView);
@@ -71,6 +87,19 @@ async function updateMarkers(map) {
       return (spherical.computeDistanceBetween(p1, p2) / 1609).toFixed(2);
     }
   });
+}
+
+function infoWindowContent(place) {
+  const contentString = `<div class="infoWindow">
+  <div class="content">
+  <h4 class="windowHeader">${place.displayName}
+  </h4>
+  <p class="address">${place.formattedAddress}</p>
+  <a href="${place.websiteURI}">Go to location</a>
+  </div>
+  </div>`;
+
+  return contentString;
 }
 
 export default function createMap() {
