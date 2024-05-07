@@ -99,7 +99,6 @@ button.clicked {
     "header header"
     "welcome store-front";
     transition: 1s;
-    padding: 10px 0;
 }
 
 .welcome {
@@ -325,6 +324,7 @@ button.clicked {
         "header"
         "store-front"
         "welcome";
+        padding: 10px 0;
     }
 
     #store {
