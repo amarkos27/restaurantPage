@@ -99,12 +99,14 @@ button.clicked {
     "header header"
     "welcome store-front";
     transition: 1s;
+    padding: 10px 0;
 }
 
 .welcome {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     margin: 0;
     width: 100%;
     font-weight: normal;
@@ -147,7 +149,7 @@ button.clicked {
 /* MENU PAGE */
 .menuContainer {
     min-width: fit-content;
-    width: 70vw;
+    width: max(350px, 70vw);
     padding: 10px;
     gap: 5px;
     display: grid;
@@ -315,7 +317,7 @@ button.clicked {
 
 
     .homeContainer {
-        width: 490px;
+        width: 350px;
         height: 800px;
         max-height: fit-content;
         grid: 1fr 4fr 4fr / 1fr;
