@@ -28,6 +28,9 @@ function render() {
       if (!button.classList.contains('clicked')) {
         unClick(alreadyClicked[0]);
         click(button);
+        const otherButtons = [...buttons].filter(
+          (otherButton) => !otherButton.classList.contains('clicked')
+        );
 
         const newContent = button.classList.contains('home')
           ? home
@@ -36,6 +39,7 @@ function render() {
           : about;
 
         content.classList.add('fadeOut');
+        otherButtons.forEach((btn) => (btn.disabled = true));
 
         content.addEventListener(
           'animationend',
@@ -48,7 +52,8 @@ function render() {
 
             setTimeout(() => {
               content.classList.remove('fadeIn');
-            }, 1000);
+              otherButtons.forEach((btn) => (btn.disabled = false));
+            }, 500);
           },
           { once: true }
         );
