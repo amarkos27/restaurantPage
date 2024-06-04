@@ -4,19 +4,13 @@ import Logo from './images/Los_Pollos_Hermanos_logo.png';
 import renderImage from './renderImage.js';
 import { click, unClick } from './buttonAnimation.js';
 import renderHome from './home.js';
-import renderMenu from './menu.js';
-import renderAbout from './about.js';
 
 function render() {
   const content = document.querySelector('#content');
   const header = document.querySelector('header');
   header.insertBefore(renderImage(Logo), header.firstChild);
 
-  const home = renderHome();
-  const menu = renderMenu();
-  const about = renderAbout();
-
-  content.appendChild(home);
+  content.appendChild(renderHome());
 
   const buttons = document.querySelectorAll('button');
   buttons.forEach((button) => {
@@ -32,11 +26,19 @@ function render() {
           (otherButton) => !otherButton.classList.contains('clicked')
         );
 
-        const newContent = button.classList.contains('home')
-          ? home
-          : button.classList.contains('menu')
-          ? menu
-          : about;
+        let newContent;
+
+        if (button.classList.contains('home')) {
+          newContent = renderHome();
+        } else if (button.classList.contains('menu')) {
+          import('./menu.js').then((menuModule) => {
+            newContent = menuModule.default();
+          });
+        } else {
+          import('./about.js').then((aboutModule) => {
+            newContent = aboutModule.default();
+          });
+        }
 
         content.classList.add('fadeOut');
         otherButtons.forEach((btn) => (btn.disabled = true));
